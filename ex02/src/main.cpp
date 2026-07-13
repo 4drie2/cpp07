@@ -1,4 +1,17 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abidaux <abidaux@student.42lehavre.fr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/13 16:33:13 by abidaux           #+#    #+#             */
+/*   Updated: 2026/07/13 16:50:51 by abidaux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream> 
+#include <string>
 #include "Array.hpp"
 
 int main() {
@@ -30,6 +43,15 @@ int main() {
     } catch (const std::exception& e) {
         std::cout << "Succes ! Exception capturee : " << e.what() << std::endl;
     }
+
+    std::cout << "\n--- TEST TYPES COMPLEXES (STRING) ---" << std::endl;
+    Array<std::string> strArray(3);
+    strArray[0] = "Hello";
+    std::cout << "Valeur string index 0 : " << strArray[0] << " (attendu: Hello)" << std::endl;
+
+    std::cout << "\n--- TEST ACCES CONSTANT (LECTURE SEULE) ---" << std::endl;
+    const Array<int> constNumbers(numbers);
+    std::cout << "Valeur const index 0  : " << constNumbers[0] << " (attendu: 42)" << std::endl;
 
     return 0;
 }
